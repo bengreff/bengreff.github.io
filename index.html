@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bengreff</title>
+<meta name="description" content="Things made by bengreff: Glome, a walkable planet in four spatial dimensions, and an SAT practice app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<style>
+  :root { --bg: #f6f5f1; --fg: #16181d; --muted: #6a6f7a; --line: #dedbd2; --accent: #1f8f80; --card: #ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0c0e13; --fg: #e4e8ee; --muted: #8e97a6; --line: #232836; --accent: #52dcc8; --card: #12151c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 72px 20px 56px; }
+  h1 { font: 500 15px "IBM Plex Mono", ui-monospace, monospace; letter-spacing: 0.02em; margin: 0 0 56px; color: var(--muted); }
+  h1 span { color: var(--fg); }
+  .work { display: grid; gap: 22px; }
+  a.item { display: grid; grid-template-columns: 240px 1fr; gap: 22px; align-items: center; text-decoration: none; color: inherit;
+           background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; transition: border-color .15s, transform .15s; }
+  a.item:hover { border-color: var(--accent); transform: translateY(-1px); }
+  a.item img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 9px; display: block; background: var(--line); }
+  h2 { font-size: 21px; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em; }
+  p { margin: 0; color: var(--muted); max-width: 46ch; }
+  .go { display: inline-block; margin-top: 10px; font: 13px "IBM Plex Mono", ui-monospace, monospace; color: var(--accent); }
+  footer { margin-top: 56px; font: 13px "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
+  footer a { color: var(--muted); }
+  @media (max-width: 600px) { main { padding-top: 48px; } a.item { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1><span>bengreff</span> · things I have made</h1>
+  <div class="work">
+    <a class="item" href="https://bengreff.github.io/glome/">
+      <img src="glome.jpg" alt="A planet hanging in the sky over a green hillside: Glome's own planet, seen one hoop-length away">
+      <div>
+        <h2>Glome</h2>
+        <p>A walkable planet in four spatial dimensions. Exact physics, no words: boulders that swell and vanish as you turn, your own planet hanging in the sky, a knot that cannot hold, and a trail of artifacts that leads off the world.</p>
+        <span class="go">play in the browser →</span>
+      </div>
+    </a>
+    <a class="item" href="https://bengreff.github.io/sat-practice/">
+      <img src="sat.jpg" alt="The SAT practice app">
+      <div>
+        <h2>SAT Practice</h2>
+        <p>Every College Board question-bank question in seven difficulty bands, adaptive mock tests, the official practice tests, and progress you can see.</p>
+        <span class="go">open →</span>
+      </div>
+    </a>
+  </div>
+  <footer><a href="https://github.com/bengreff">github.com/bengreff</a></footer>
+</main>
+</body>
+</html>
