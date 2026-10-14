@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bengreff.github.io/sat-practice/sitemap.xml
