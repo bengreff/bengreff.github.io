@@ -16,8 +16,8 @@ PAGE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} · bengreff</title>
-<meta name="description" content="{title}, a story in verse with two letters, by bengreff.">
+<title>{title} · Ben Greff</title>
+<meta name="description" content="{title}, a story in verse with two letters, by Ben Greff.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
@@ -25,7 +25,7 @@ PAGE = """<!doctype html>
 </head>
 <body>
 <header class="top">
-  <a class="name" href="/">bengreff</a>
+  <a class="name" href="/">Ben Greff</a>
   <nav><a href="/">Projects</a><a href="/fiction/" aria-current="page">Fiction &amp; art</a></nav>
 </header>
 
