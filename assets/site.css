@@ -33,12 +33,22 @@ main { max-width: 980px; margin: 0 auto; padding: 36vh 32px 40px; }
 .work.one li { border-right: 0; }
 .work h2 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 6px; }
 .work p { margin: 0; color: var(--muted); max-width: 48ch; }
+.work.cards li { padding: 0; }
+.work .shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--line); background: #05070b; }
+.work .shot picture { display: contents; }
+.work .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.work .txt { padding: 20px 26px 24px; }
+.enter { display: block; width: max-content; margin: -48px 0 14px auto; padding: 7px 14px; border: 1px solid var(--line);
+         border-radius: 999px; background: var(--panel); color: var(--fg); text-decoration: none;
+         font: 13px "IBM Plex Mono", ui-monospace, monospace; }
+.enter:hover { border-color: var(--fg); }
 .links { margin-top: 10px; display: flex; gap: 18px; font: 13px "IBM Plex Mono", ui-monospace, monospace; }
 .links a { color: var(--accent); text-decoration: none; }
 .links a:hover { text-decoration: underline; }
 
 footer { max-width: 980px; margin: 0 auto; padding: 8px 32px 56px; font: 13px "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
 footer a { color: var(--muted); }
+footer .credit { margin: 10px 0 0; font-size: 11px; opacity: 0.8; }
 
 /* Reading pages */
 main.read { padding-top: 64px; }
@@ -49,6 +59,28 @@ main.read { padding-top: 64px; }
          font: 15px/1.75 "IBM Plex Mono", ui-monospace, monospace; }
 .letter { max-width: 62ch; margin: 56px auto; font-size: 17px; line-height: 1.65; }
 .letter p { margin: 0 0 1em; }
+.plain .paper { background: none; border: 0; }
+
+/* Interactive view of the background (/hopf/) */
+body.viz { overflow: hidden; height: 100vh; }
+#viz { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none; cursor: grab; }
+#viz.dragging { cursor: grabbing; }
+.viz-back, .viz-controls button { font: 13px "IBM Plex Mono", ui-monospace, monospace; color: var(--fg); background: var(--panel);
+         border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; text-decoration: none; cursor: pointer; }
+.viz-back:hover, .viz-controls button:hover { border-color: var(--fg); }
+.viz-back { position: fixed; top: 22px; left: 28px; }
+.viz-hint { position: fixed; top: 22px; right: 28px; margin: 0; max-width: 56ch; pointer-events: none; padding: 6px 13px;
+            background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+            font: 12px/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); transition: opacity .8s; }
+.viz-hint.gone { opacity: 0; }
+.viz-controls { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); width: min(1180px, calc(100vw - 32px));
+                display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; padding: 12px 18px;
+                background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+                font: 12px "IBM Plex Mono", ui-monospace, monospace; color: var(--muted);
+                -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.viz-controls label { flex: 1 1 96px; min-width: 96px; display: grid; grid-template-columns: 1fr auto; row-gap: 2px; }
+.viz-controls output { color: var(--fg); }
+.viz-controls input[type=range] { grid-column: 1 / -1; width: 100%; margin: 0; accent-color: var(--accent); }
 
 @media (max-width: 700px) {
   .top { padding: 20px 16px 0; gap: 18px; }
@@ -58,6 +90,12 @@ main.read { padding-top: 64px; }
   .work { grid-template-columns: 1fr; }
   .work li, .work li:nth-child(odd) { border-right: 0; padding: 20px 18px 22px; }
   .work li:nth-child(2) { border-top: 1px solid var(--line); }
+  .work.cards li, .work.cards li:nth-child(odd) { padding: 0; }
+  .work.cards .txt { padding: 18px 18px 22px; }
+  .viz-back { top: 14px; left: 16px; }
+  .viz-hint { top: 58px; left: 16px; right: auto; }
+  .viz-controls { bottom: 10px; width: calc(100vw - 20px); padding: 10px 12px; gap: 8px 14px; }
+  .viz-controls label { flex-basis: 27%; min-width: 80px; }
   main.read { padding-left: 10px; padding-right: 10px; }
   .paper { padding: 32px 8px 40px; border-radius: 10px; }
   .letter { font-size: 16px; margin: 40px auto; padding: 0 4px; }

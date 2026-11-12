@@ -11,7 +11,7 @@
   const TAU = Math.PI * 2;
 
   const LATS = [0.9, 0.62, 0.3, -0.05, -0.4];   // circles of latitude on the base 2-sphere
-  const LONS = 22, STEPS = 220;
+  const LONS = 48, STEPS = 220;
   const fibres = [];
   LATS.forEach((z, li) => {
     const r = Math.sqrt(1 - z * z);
@@ -42,7 +42,9 @@
   const still = window.matchMedia('(prefers-reduced-motion: reduce)');
   const t0 = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0;  // ?t= jumps ahead (s)
 
+  let shownT = t0;
   function draw(T) {
+    shownT = T;
     // A and E: full turns in the 4D planes (x0, x3) and (x2, x3). B, C: slow 3D turns. P: fixed tilt.
     const A = 0.021 * T + 0.35, E = 0.0131 * T + 0.9, B = 0.009 * T, C = 0.015 * T, P = 0.5;
     const cA = Math.cos(A), sA = Math.sin(A), cE = Math.cos(E), sE = Math.sin(E);
@@ -110,6 +112,11 @@
     running = on;
     if (on) requestAnimationFrame(loop);
   }
+
+  // "Open in 3D" links carry the moment you left, so the interactive view starts where the background was.
+  document.querySelectorAll('a.enter').forEach(a => a.addEventListener('click', () => {
+    a.href = '/hopf/?t=' + shownT.toFixed(2);
+  }));
 
   resize();
   draw(t0);

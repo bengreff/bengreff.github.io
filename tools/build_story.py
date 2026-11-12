@@ -23,7 +23,7 @@ PAGE = """<!doctype html>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
+<body class="plain">
 <header class="top">
   <a class="name" href="/">Ben Greff</a>
   <nav><a href="/">Projects</a><a href="/fiction/" aria-current="page">Fiction &amp; art</a></nav>
@@ -56,7 +56,6 @@ PAGE = """<!doctype html>
   window.addEventListener('resize', fitVerse);
   if (document.fonts) document.fonts.ready.then(fitVerse);
 </script>
-<script src="/assets/bg.js"></script>
 </body>
 </html>
 """

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hopf fibration · Ben Greff</title>
+<meta name="description" content="The Hopf fibration, turning through four dimensions: a 3D view you can turn, pan and zoom, with its parameters on sliders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="viz">
+<canvas id="viz" aria-label="Hopf fibration, interactive 3D view"></canvas>
+<a class="viz-back" href="/">← Ben Greff</a>
+<p class="viz-hint" id="hint">drag to turn · shift-drag or right-drag to pan · scroll or pinch to zoom · double-click to reset</p>
+<form class="viz-controls" onsubmit="return false">
+  <button type="button" id="play">pause</button>
+  <label><span>speed</span><input type="range" id="speed" min="0" max="12" step="0.1" value="1"><output></output></label>
+  <label><span>xw turn</span><input type="range" id="ra" min="-6" max="6" step="0.1" value="1"><output></output></label>
+  <label><span>yw turn</span><input type="range" id="rg" min="-6" max="6" step="0.1" value="0"><output></output></label>
+  <label><span>zw turn</span><input type="range" id="re" min="-6" max="6" step="0.1" value="1"><output></output></label>
+  <label><span>circles</span><input type="range" id="lats" min="1" max="9" step="1" value="5"><output></output></label>
+  <label><span>fibres</span><input type="range" id="lons" min="3" max="64" step="1" value="48"><output></output></label>
+  <label><span>line</span><input type="range" id="lw" min="0.4" max="4" step="0.1" value="1.2"><output></output></label>
+  <button type="button" id="reset">reset view</button>
+</form>
+<script src="/assets/hopf.js"></script>
+</body>
+</html>
