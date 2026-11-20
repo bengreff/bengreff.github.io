@@ -26,7 +26,7 @@ PAGE = """<!doctype html>
 <body class="plain">
 <header class="top">
   <a class="name" href="/">Ben Greff</a>
-  <nav><a href="/">Projects</a><a href="/fiction/" aria-current="page">Fiction &amp; art</a></nav>
+  <nav><a href="/">Projects</a><a href="/art/" aria-current="page">Art</a></nav>
 </header>
 
 <main class="read">

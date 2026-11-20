@@ -31,6 +31,10 @@ main { max-width: 980px; margin: 0 auto; padding: 36vh 32px 40px; }
 .work li:nth-child(odd) { border-right: 1px solid var(--line); }
 .work.one { grid-template-columns: 1fr; max-width: 620px; }
 .work.one li { border-right: 0; }
+.work.one li + li { border-top: 1px solid var(--line); }
+.track { margin-top: 14px; }
+.track span { display: block; margin-bottom: 6px; font: 13px "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
+.track audio { display: block; width: 100%; max-width: 520px; height: 36px; color-scheme: light dark; }
 .work h2 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 6px; }
 .work p { margin: 0; color: var(--muted); max-width: 48ch; }
 .work.cards li { padding: 0; }
